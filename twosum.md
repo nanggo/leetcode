@@ -1,4 +1,4 @@
-# two sum
+# Two Sum
 
 
 ## 문제
@@ -12,6 +12,7 @@
 > nums[1] + nums[2] = 2 + 3 = 5,
 > return [1, 2].
 
+<br>
 
 ## 처음 내가 푼 답
 최적화를 생각하지 않고 우선은 `brute-force`로 풀었다.
@@ -28,6 +29,7 @@ var twoSum = function(nums, target) {
     }
 };
 ```
+<br>
 
 ## 최적화 되지 않은 결과
 
@@ -35,7 +37,13 @@ var twoSum = function(nums, target) {
 
 역시나 나보다 느린 사람은 18.12%에 없었다.
 
+<br>
+
 ## 최적화 해본 답
+
+반복문을 한 번만 이용한다. Map에 key/value로 이뤄진 숫자와 인덱스 값이 저장될 때, value와 더해서 target이 되는 another라는 값이 Map 내에 존재하는지 찾는다.
+
+결과값이 있으면 더 진행하지 않고 해당하는 index들을 `return`한다.
 
 ```javascript
 var twoSum = function(nums, target) {
@@ -53,11 +61,12 @@ var twoSum = function(nums, target) {
   return null;
 };
 ```
-
+<br>
 
 ## 최적화 결과
 
-Map을 이용해서 key, value로 숫자와 인덱스를 저장했다. 반복문을 한 번 이용했기에 O(n)의 복잡도를 ![O(n)](https://user-images.githubusercontent.com/16912219/72887255-aac4f780-3d4e-11ea-8a67-7333e4b673cd.gif) 갖는다.
+Map을 이용해서 key, value로 숫자와 인덱스를 저장했다.
+반복문을 한 번 이용했기에 ![O(n)](https://user-images.githubusercontent.com/16912219/72887255-aac4f780-3d4e-11ea-8a67-7333e4b673cd.gif) 복잡도를 갖는다.
 
 
 ![최적화](https://user-images.githubusercontent.com/16912219/72886339-f5de0b00-3d4c-11ea-94e3-300dfc136ccc.png)
