@@ -72,3 +72,26 @@ Map을 이용해서 key, value로 숫자와 인덱스를 저장했다.
 ![최적화](https://user-images.githubusercontent.com/16912219/72886339-f5de0b00-3d4c-11ea-94e3-300dfc136ccc.png)
 
 최적화 전 속도의 1/3에 지나지 않는다. 메모리를 0.6MB 더 사용하긴 하지만, 유의미한 속도 차이가 나기 때문에 훨씬 나은 결과라고 생각한다.
+
+
+## 가장 빨랐던 답
+
+```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+  const hash = [];
+  const len = nums.length;
+  for (let i = 0; i < len; i++) {
+    // if compliment exists, return compliment index and i
+    if (hash.hasOwnProperty(nums[i])) return [hash[nums[i]], i];
+
+    // else, save the compliment
+    const compliment = target - nums[i];
+    hash[compliment] = i;
+  }
+};
+```

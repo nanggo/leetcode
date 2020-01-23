@@ -2,4 +2,4 @@
 내가 풀어본 leetcode 문제들
 
 
-1. [Two Sum](./twosum.md)
+1. [Two Sum](./two-sum.md)
